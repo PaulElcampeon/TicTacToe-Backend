@@ -10,6 +10,9 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,6 +24,11 @@ public class GameController {
     private GameService gameService;
 
     private Logger logger = Logger.getLogger(GameController.class.getName());
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public @ResponseBody String wakeUp() {
+        return "I'm awake";
+    }
 
     @MessageMapping(value = "/join")
     public void joinGame(@Payload JoinGame joinGame) {
