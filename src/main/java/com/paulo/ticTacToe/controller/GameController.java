@@ -37,8 +37,8 @@ public class GameController {
     }
 
     @RequestMapping(value = "/port", method = RequestMethod.GET)
-    public int getPortNo() {
-        return portNo;
+    public String getPortNo() {
+        return String.valueOf(portNo);
     }
 
     @MessageMapping(value = "/join")
