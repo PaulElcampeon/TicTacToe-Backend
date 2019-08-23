@@ -26,7 +26,7 @@ public class GameController {
     @Autowired
     private GameService gameService;
 
-    @Value("${deployed.port}")
+    @Value("${server.port}")
     private int portNo;
 
     private Logger logger = Logger.getLogger(GameController.class.getName());
