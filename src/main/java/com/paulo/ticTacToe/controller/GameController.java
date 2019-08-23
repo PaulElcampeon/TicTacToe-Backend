@@ -38,6 +38,8 @@ public class GameController {
 
     @RequestMapping(value = "/port", method = RequestMethod.GET)
     public String getPortNo() {
+        System.out.println("Someone hit up the port");
+        System.out.println(portNo);
         return String.valueOf(portNo);
     }
 
