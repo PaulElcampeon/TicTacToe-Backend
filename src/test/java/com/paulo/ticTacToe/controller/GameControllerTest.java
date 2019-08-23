@@ -96,12 +96,6 @@ public class GameControllerTest {
             e.printStackTrace();
         }
     }
-//
-//    private List<Transport> createTransportClient() {
-//        List<Transport> transports = new ArrayList<>(1);
-//        transports.add(new WebSocketTransport(new StandardWebSocketClient()));
-//        return transports;
-//    }
 
     private class playerActionMessageHandler implements StompFrameHandler {
         @Override
