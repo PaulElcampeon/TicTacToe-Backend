@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,8 +28,8 @@ public class GameController {
     private Logger logger = Logger.getLogger(GameController.class.getName());
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String homePage() {
-        return "index.html";
+    public @ResponseBody  String homePage() {
+        return "im awake now";
     }
 
     @MessageMapping(value = "/join")
