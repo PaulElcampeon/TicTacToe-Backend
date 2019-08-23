@@ -28,8 +28,8 @@ public class GameController {
     private Logger logger = Logger.getLogger(GameController.class.getName());
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public @ResponseBody String wakeUp() {
-        return "I'm awake";
+    public String homePage() {
+        return "index.html";
     }
 
     @MessageMapping(value = "/join")
