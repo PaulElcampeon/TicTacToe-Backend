@@ -5,6 +5,7 @@ import com.paulo.ticTacToe.messages.PlayerAction;
 import com.paulo.ticTacToe.models.GameSession;
 import com.paulo.ticTacToe.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -25,7 +26,7 @@ public class GameController {
     @Autowired
     private GameService gameService;
 
-    @LocalServerPort
+    @Value("${deployed.port}")
     private int portNo;
 
     private Logger logger = Logger.getLogger(GameController.class.getName());
