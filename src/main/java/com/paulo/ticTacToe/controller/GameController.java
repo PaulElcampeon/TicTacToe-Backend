@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -37,9 +38,7 @@ public class GameController {
     }
 
     @RequestMapping(value = "/port", method = RequestMethod.GET)
-    public String getPortNo() {
-        System.out.println("Someone hit up the port");
-        System.out.println(portNo);
+    public @ResponseBody String getPortNo() {
         return String.valueOf(portNo);
     }
 
