@@ -27,19 +27,11 @@ public class GameController {
     @Autowired
     private GameService gameService;
 
-    @Value("${server.port}")
-    private int portNo;
-
     private Logger logger = Logger.getLogger(GameController.class.getName());
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String homePage() {
         return "index.html";
-    }
-
-    @RequestMapping(value = "/port", method = RequestMethod.GET)
-    public @ResponseBody String getPortNo() {
-        return String.valueOf(portNo);
     }
 
     @MessageMapping(value = "/join")
